@@ -1,7 +1,24 @@
-import React from 'react';
+import React, { useEffect,useState } from 'react';
 import { useForm } from "react-hook-form";
+import { useParams } from 'react-router';
 
 const RegisterForm = () => {
+    const [event  ,setEvent] = useState();
+
+    const {_id} = useParams();
+    // console.log(_id)
+
+    useEffect(()=>{
+        const url = `http://localhost:5080/event/${_id}`
+        fetch(url)
+        .then(res =>res.json())
+        .then(data =>setEvent(data))
+    },[]);
+
+    // console.log(event[0].img)
+   
+
+
 
     const { register, handleSubmit,formState: { errors } } = useForm();
     const onSubmit = data =>{
@@ -10,7 +27,8 @@ const RegisterForm = () => {
             email:data.email,
             description:data.description,
             date:data.date,
-            registerDate: new Date().toDateString()
+            registerDate: new Date().toDateString(),
+            images:event[0].img
         };
         console.log(volunteerData)
         const url = `http://localhost:5080/addVolunteer`

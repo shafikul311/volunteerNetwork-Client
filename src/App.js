@@ -16,7 +16,10 @@ function App() {
       <Router>
         <NavBar></NavBar>
         <Switch>
-          <Route exact path="/home">
+          <Route path="/home">
+            <Home />
+          </Route>
+          <Route exact path="/">
             <Home />
           </Route>
 
@@ -35,7 +38,7 @@ function App() {
            <Login/>
           </Route>
           
-          <Route path="/register">
+          <Route path="/register/:_id">
           <RegisterForm></RegisterForm>
           </Route>
           <Route path="/admin">

@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import google from "../../images/Group 573.png";
-import RegisterForm from "../RegisterForm/RegisterForm";
 
 const Login = () => {
   return (

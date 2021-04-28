@@ -13,14 +13,14 @@ const Home = () => {
 
     },[])
 
-    console.log(allEvents)
+    // console.log(allEvents)
     return (
         <div>
             <div>
             <SearchField/>
             </div>
             <div>
-                <div class="row row-cols-1 m-5 row-cols-md-4 g-4">
+                <div className="row row-cols-1 m-5 row-cols-md-4 g-4">
                {
                 allEvents.map((event ,id)=><EventCardList event={event} key={id}></EventCardList>)
                 }

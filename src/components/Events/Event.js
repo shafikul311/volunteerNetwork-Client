@@ -11,11 +11,13 @@ const Event = () => {
     },[])
     console.log(bookEvents)
     return (
-        <div>
-            <h1>Booked Events</h1>
-            {
+        <div className="p-3">
+            <h2>Your All Booked Events</h2>
+           <div className="row d-flex m-2 p-2">
+           {
                 bookEvents.map((bookEvent ,id)=><BookedEvent key={id} bookEvent={bookEvent}></BookedEvent>)
             }
+           </div>
             
         </div>
     );

@@ -1,0 +1,8 @@
+.side-bar-style {
+    list-style-type: none;
+
+}
+
+.side-bar-style:hover {
+    font-size: 1.3em;
+  }
