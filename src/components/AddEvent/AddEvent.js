@@ -15,15 +15,16 @@ const AddEvent = () => {
             img:image
            
         }
-        const url =`http://localhost:5080/addEvents`
+        const url =`https://stark-reaches-61306.herokuapp.com/addEvents`
        
             fetch(url, {
             method: "POST",
             headers: {
-                "Content-type": "application/json",
+                "Content-type": "Application/json",
             },
             body: JSON.stringify(formData),
             }).then((res) => res.json());
+            alert('Added New Event')
         
     };
 
@@ -90,7 +91,7 @@ const AddEvent = () => {
       </div>
       <br/>
       
-      <input type="submit" />
+      <input className=" btn btn-primary pill" type="submit" />
     </form>
             
         </div>

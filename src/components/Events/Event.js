@@ -4,7 +4,7 @@ import BookedEvent from '../BookedEvent/BookedEvent';
 const Event = () => {
     const [ bookEvents , serBookEvents] = useState([])
     useEffect(() => {
-        const url = `http://localhost:5080/getVolunteer`
+        const url = `https://stark-reaches-61306.herokuapp.com/getVolunteer`
         fetch(url)
         .then(res =>res.json())
         .then(data =>serBookEvents(data))

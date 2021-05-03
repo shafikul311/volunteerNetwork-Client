@@ -9,27 +9,36 @@ import Admin from "./components/Admin/Admin";
 import RegisterForm from "./components/RegisterForm/RegisterForm";
 import NavBar from "./components/NavBar/NavBar";
 import ManageVolenteer from "./components/ManageVolenteer/ManageVolenteer";
+import { createContext, useState } from "react";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
+
+export const UserContext = createContext()
 function App() {
+
+  const [loggedInUser , setLoggedInUser] = useState({});
+ 
   return (
     <div>
+
+      <UserContext.Provider value={[loggedInUser , setLoggedInUser]}>
+       
       <Router>
+      {/* <p>{loggedInUser.name}</p> */}
         <NavBar></NavBar>
         <Switch>
           <Route path="/home">
             <Home />
           </Route>
-          <Route exact path="/">
-            <Home />
-          </Route>
+       
 
           <Route path="/donation">
             <Donation/>
-          
           </Route>
-          <Route path="/events">
+
+          <PrivateRoute path="/events">
            <Event/>
-          </Route>
+          </PrivateRoute>
 
           <Route path="/blogs">
            <Blog/>
@@ -41,14 +50,21 @@ function App() {
           <Route path="/register/:_id">
           <RegisterForm></RegisterForm>
           </Route>
-          <Route path="/admin">
+
+          <PrivateRoute path="/admin">
            <Admin/>
-          </Route>
+          </PrivateRoute>
+
           <Route path="/volounteerList">
            <ManageVolenteer/>
+          </Route>  
+
+          <Route exact path="/">
+            <Home />
           </Route>
         </Switch>
       </Router>
+      </UserContext.Provider>
     </div>
   );
 }

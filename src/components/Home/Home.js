@@ -1,21 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import EventCardList from '../EventCardList/EventCardList';
 import SearchField from '../SearchField/SearchField';
+import './Home.css'
 
 const Home = () => {
     const [allEvents , setAllEvents] = useState([])
 
     useEffect(() =>{
-        const url = `http://localhost:5080/event`
+        const url = `https://stark-reaches-61306.herokuapp.com/event`
         fetch(url)
         .then(res =>res.json())
         .then(data =>setAllEvents(data))
 
     },[])
 
-    // console.log(allEvents)
+    console.log(allEvents)
     return (
-        <div>
+        <div className="home-container">
             <div>
             <SearchField/>
             </div>

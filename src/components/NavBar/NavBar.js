@@ -5,7 +5,7 @@ import './NavBar.css'
 
 const NavBar = () => {
     return (
-        <div className="justify-content-between">
+        <div className="justify-content-between" >
             <nav className="navbar navbar-expand-lg navbar-light bg-light ">
   <div className="container-fluid">
     <img src={`${imag}`} style={{height:"50px"}} alt=""/>
@@ -19,23 +19,17 @@ const NavBar = () => {
           
         </li>
         <li className="nav-item p-3">
-        <Link to="/donation">Donation</Link>
+        <Link className="link-color" to="/donation">Donation</Link>
         </li>
         <li className="nav-item p-3">
-        <Link to="/events">Events</Link>
+        <Link className="link-color" to="/events">Events</Link>
         </li>
         <li className="nav-item p-3">
-        <Link to="/blogs">Blogs</Link>
-        </li>
-
-        <li className="nav-item p-3">
-        <Link to="/login">
-        <button className="btn btn-outline-primary">Login</button>
-        </Link>
+        <Link className="link-color" to="/blogs">Blogs</Link>
         </li>
         <li className="nav-item p-3 me-5">
-        <Link to="/admin">
-        <button className="btn btn-outline-primary">Admin</button>
+        <Link className="link-color" to="/admin">
+        <button className="link-color btn btn-outline-primary">Admin</button>
         </Link>
         </li>
       </ul>
