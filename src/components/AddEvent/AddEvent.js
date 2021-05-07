@@ -22,8 +22,11 @@ const AddEvent = () => {
             headers: {
                 "Content-type": "Application/json",
             },
-            body: JSON.stringify(formData),
+
+            body:JSON.stringify(formData),
+
             }).then((res) => res.json());
+            
             alert('Added New Event')
         
     };
@@ -33,11 +36,13 @@ const AddEvent = () => {
 
     const handleImageSubmit = (event) => {
 
+        console.log(event)
         const imgData = new FormData()
+        console.log(imgData)
         
 
         imgData.set("key", "eaeada892240c3e78235aac2d3a8e400");
-        imgData.append("image", event.target.files[0]);
+        imgData.append("image",event.target.files[0]);
 
         axios
         .post("https://api.imgbb.com/1/upload", imgData)
@@ -78,7 +83,7 @@ const AddEvent = () => {
           <div className="col-md-6">
                     <label>Description :</label>
                     <br/>
-                    <input className="form-control" defaultValue="Description" {...register("description", { required: true })} />
+                    <input className="form-control" type="text" defaultValue="Description" {...register("description", { required: true })} />
                     {errors.description && <span>This field is required</span>}
 
           </div>

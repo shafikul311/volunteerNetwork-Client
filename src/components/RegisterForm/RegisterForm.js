@@ -9,7 +9,7 @@ const RegisterForm = () => {
     // console.log(_id)
 
     useEffect(()=>{
-        const url = `http://localhost5080/event/${_id}`
+        const url = `https://stark-reaches-61306.herokuapp.com/event/${_id}`
         fetch(url)
         .then(res =>res.json())
         .then(data =>setEvent(data))
@@ -31,7 +31,7 @@ const RegisterForm = () => {
             images:event[0].img
         };
         console.log(volunteerData)
-        const url = `https://stark-reaches-61306.herokuapp.com/addVolunteer`
+        const url = `https://radiant-oasis-50414.herokuapp.com//addVolunteer`
         fetch(url,{
             method: 'POST',
             headers:{

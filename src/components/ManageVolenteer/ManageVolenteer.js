@@ -5,7 +5,7 @@ import SideBar from '../SideBar/SideBar';
 const ManageVolenteer = () => {
     const [events , setEvents] = useState([])
     useEffect(() => {
-        const url = `https://stark-reaches-61306.herokuapp.com/event`
+        const url = `https://radiant-oasis-50414.herokuapp.com/event`
         fetch(url)
         .then(res => res.json())
         .then(data=>setEvents(data))

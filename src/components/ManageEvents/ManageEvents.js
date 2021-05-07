@@ -8,7 +8,7 @@ const ManageEvents = (props) => {
     const handleDelete= (_id) => {
         console.log(_id)
 
-        fetch(`https://stark-reaches-61306.herokuapp.com/deleteEvent/${_id}`,{
+        fetch(`https://radiant-oasis-50414.herokuapp.com//deleteEvent/${_id}`,{
             method: 'DELETE'
             })
             .then(res =>res.json())

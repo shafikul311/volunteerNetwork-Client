@@ -5,7 +5,7 @@ const BookedEvent = (props) => {
     const { date , name ,description, email ,images,registerDate ,_id } = props.bookEvent
 
     const handleDelete=(_id)=>{
-        fetch(`https://stark-reaches-61306.herokuapp.com/delete/${_id}`,{
+        fetch(`https://radiant-oasis-50414.herokuapp.com/delete/${_id}`,{
             method: 'DELETE'
             })
             .then(res =>res.json())

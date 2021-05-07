@@ -5,18 +5,24 @@ import './Home.css'
 
 const Home = () => {
     const [allEvents , setAllEvents] = useState([])
+    const [empty , setEmpty ] = useState(false)
 
     useEffect(() =>{
-        const url = `https://stark-reaches-61306.herokuapp.com/event`
+        const url = `https://radiant-oasis-50414.herokuapp.com/event`
         fetch(url)
         .then(res =>res.json())
         .then(data =>setAllEvents(data))
+        setEmpty(true)
 
     },[])
 
     console.log(allEvents)
     return (
         <div className="home-container">
+
+            {
+                empty.length ? <div> loading</div> : <div> o</div>
+            }
             <div>
             <SearchField/>
             </div>
